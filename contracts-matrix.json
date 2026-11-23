@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "sdkVersion": "0.2.0",
+  "pinnedSources": {
+    "simoder": {
+      "repository": "SimCity13-Modders/Simoder",
+      "branch": "u4-u5-development",
+      "nativeContractSha256": "00c98e36f669c6c4f16f7ffd9073130ae9798543b3d0759d7c1937f443e6e236"
+    },
+    "simoderBase": {
+      "repository": "SimCity13-Modders/Simoder-Base",
+      "version": "0.2.0-alpha",
+      "catalogueContract": 2
+    }
+  },
+  "contracts": [
+    {
+      "id": "simoder.apiVersion",
+      "domain": "luau",
+      "profile": "simoder-luau-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Luau/simoder.d.luau"
+    },
+    {
+      "id": "simoder.modId",
+      "domain": "luau",
+      "profile": "simoder-luau-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Luau/simoder.d.luau"
+    },
+    {
+      "id": "simoder.log",
+      "domain": "luau",
+      "profile": "simoder-luau-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Luau/simoder.d.luau"
+    },
+    {
+      "id": "simoder.time",
+      "domain": "luau",
+      "profile": "simoder-luau-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Luau/simoder.d.luau"
+    },
+    {
+      "id": "simoder.hasCapability",
+      "domain": "luau",
+      "profile": "simoder-luau-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Luau/simoder.d.luau"
+    },
+    {
+      "id": "simoder.props.getFloat",
+      "domain": "luau",
+      "profile": "simoder-luau-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Luau/simoder.d.luau"
+    },
+    {
+      "id": "simoder.props.setFloat",
+      "domain": "luau",
+      "profile": "simoder-luau-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Luau/simoder.d.luau"
+    },
+    {
+      "id": "simoder.props.clearFloat",
+      "domain": "luau",
+      "profile": "simoder-luau-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Luau/simoder.d.luau"
+    },
+    {
+      "id": "base.permissions.query",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "base.values.validate",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "base.values.wire",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "base.request",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "base.run",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "base.snapshot",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "base.subscribe",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "base.descriptors",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "BaseTask.poll",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "BaseTask.cancel",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "BaseTask.onCompleted",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "BaseTask.onFailed",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "BaseTask.await",
+      "domain": "base-luau",
+      "profile": "base-luau-alpha-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "Luau/base.d.luau"
+    },
+    {
+      "id": "SimoderModule_QueryV2",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "SimoderModule_PrepareV2",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "SimoderModule_AdmitV2",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "SimoderModule_QuiesceV2",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "SimoderModule_DrainV2",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "SdHostApiV2.lifecycle",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "SdHostApiV2.dispatch",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "unavailable",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "SdHostApiV2.credentials",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "unavailable",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "SdHostApiV2.semantic",
+      "domain": "native-abi",
+      "profile": "native-abi-v2",
+      "version": "2.0.0",
+      "owner": "Simoder",
+      "status": "unavailable",
+      "declaration": "Native/native.h"
+    },
+    {
+      "id": "js.simoder.apiVersion",
+      "domain": "js-ts",
+      "profile": "js-ts-beta-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "TypeScript/simoder.d.ts"
+    },
+    {
+      "id": "js.simoder.modId",
+      "domain": "js-ts",
+      "profile": "js-ts-beta-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "TypeScript/simoder.d.ts"
+    },
+    {
+      "id": "js.simoder.log",
+      "domain": "js-ts",
+      "profile": "js-ts-beta-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "TypeScript/simoder.d.ts"
+    },
+    {
+      "id": "js.simoder.time",
+      "domain": "js-ts",
+      "profile": "js-ts-beta-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "TypeScript/simoder.d.ts"
+    },
+    {
+      "id": "js.simoder.hasCapability",
+      "domain": "js-ts",
+      "profile": "js-ts-beta-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "TypeScript/simoder.d.ts"
+    },
+    {
+      "id": "js.simoder.props.getFloat",
+      "domain": "js-ts",
+      "profile": "js-ts-beta-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "TypeScript/simoder.d.ts"
+    },
+    {
+      "id": "js.simoder.props.setFloat",
+      "domain": "js-ts",
+      "profile": "js-ts-beta-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "TypeScript/simoder.d.ts"
+    },
+    {
+      "id": "js.simoder.props.clearFloat",
+      "domain": "js-ts",
+      "profile": "js-ts-beta-v1",
+      "version": "1.0.0",
+      "owner": "Simoder",
+      "status": "supported",
+      "declaration": "TypeScript/simoder.d.ts"
+    },
+    {
+      "id": "js.base.permissions.query",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.base.values.validate",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.base.values.wire",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.base.request",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.base.run",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.base.snapshot",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.base.subscribe",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.base.descriptors",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.BaseTask.poll",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.BaseTask.cancel",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.BaseTask.onCompleted",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.BaseTask.onFailed",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    },
+    {
+      "id": "js.BaseTask.await",
+      "domain": "js-ts",
+      "profile": "base-ts-beta-v1",
+      "version": "0.2.0-alpha",
+      "owner": "Simoder-Base",
+      "status": "supported",
+      "declaration": "TypeScript/base.d.ts"
+    }
+  ]
+}

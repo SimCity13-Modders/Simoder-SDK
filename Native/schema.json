@@ -1,0 +1,58 @@
+{
+  "format_version": 1,
+  "status": "native-lifecycle-v2; optional semantic, dispatch and credentials unavailable",
+  "host_version": 2,
+  "semantic_version": 1,
+  "base_contract_version": 1,
+  "packing": 4,
+  "target": "windows-x86",
+  "calling_convention": "__cdecl",
+  "baseline": "abi_v1.h",
+  "result_extensions": {
+    "CAPABILITY_UNAVAILABLE": 12,
+    "CONTEXT_EXPIRED": 13,
+    "OPERATION_FAILED": 14,
+    "RESOURCE_LIMIT": 15,
+    "DEADLINE": 16
+  },
+  "task_phases": {
+    "QUEUED": 0,
+    "RUNNING": 1,
+    "SUCCEEDED": 2,
+    "FAILED": 3,
+    "CANCELLED": 4,
+    "INDETERMINATE": 5
+  },
+  "task_flags": {
+    "COMMITTED": 1
+  },
+  "sizes": {
+    "SdTaskInfo": 52,
+    "SdSnapshotInfo": 64,
+    "SdSemanticApi": 36,
+    "SdHostApiV2": 32,
+    "SdModuleDescriptorV2": 56
+  },
+  "limits": {
+    "global_pending_operations": 8,
+    "retained_tasks_per_generation": 128,
+    "retained_resources_per_generation": 64,
+    "value_bytes": 1048576,
+    "mailbox_events_per_generation": 128,
+    "mailbox_bytes_per_generation": 1048576,
+    "callback_subscription_registrations_per_generation": 64,
+    "base_candidate_memory_bytes": 8388608,
+    "aggregate_declared_vm_bytes": 134217728
+  },
+  "limits_status": "Inherited caps plus proposed conservative adapter caps; not measured performance, all smaller per-operation limits still apply",
+  "prohibited": [
+    "public invocation/grant mint",
+    "raw VM or game pointers",
+    "cross-VM closure sharing",
+    "implicit agent-to-mod identity downgrade",
+    "core static duplication",
+    "MCP parsing in core/base",
+    "arbitrary function address dispatch",
+    "test authority in production"
+  ]
+}

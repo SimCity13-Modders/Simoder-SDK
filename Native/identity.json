@@ -1,0 +1,14 @@
+{
+  "algorithm": "SHA256 of sorted compact UTF8 JSON path-to-SHA256 map",
+  "input_hashes": {
+    "schema.json": "e4e0bef7d1af92552b1e0d2447e20608565af2389c035e1a3b0c2365199dff10",
+    "generate.py": "757201b20dd257628aa3d2233ea2668f91cc626e24c69e2705da0f18f455ca3c",
+    "joint-contract.md": "4406d91435b0d49840536b407981568c892030170559981af0ae7996b3021301",
+    "native-boundary.md": "d81086ec85bb9c47c353ec755b3045afb85bd25714c421720fc3426e5f6d8348",
+    "value-contract.md": "5e109cf7e45317e3c9386c2bf8f368235b01d4051643339192ff1ad06518f169",
+    "conformance.md": "a24d3070f92208485eaa2850c45518c395c285a0a6fcb7e22c8beeac1651540c",
+    "abi_v1.h": "8571d414bf6e13f23a30ca0db6ab5a2e64ba54e968e16a03c06ad3caaaed284c",
+    "baseline-schema.json": "bca39f09b5322ca4613639ce262e79db1fa6865c38c4a8549e4496cb3422bdeb"
+  },
+  "digest": "00c98e36f669c6c4f16f7ffd9073130ae9798543b3d0759d7c1937f443e6e236"
+}

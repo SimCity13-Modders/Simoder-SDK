@@ -1,0 +1,9 @@
+# Preserve canonical payload bytes across checkout platforms.
+/Luau/simoder.d.luau -text
+/Luau/README.md -text
+/TypeScript/simoder.d.ts -text
+/LICENSE -text
+/sdk-manifest.json -text
+/Native/** -text
+/Luau/base.d.luau -text
+/Luau/BASE_API.md -text

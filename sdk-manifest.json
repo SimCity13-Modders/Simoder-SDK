@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "upstream_repository": "Simoder-DevTools",
+  "upstream_revision": "d1128dc40336ecd7371d15305411ab73fdae20db",
+  "files": {
+    "Luau/simoder.d.luau": "e7f70b6374ef053bf0702a697de7272cb62ecbefebc6fb8e6d972e9cf24e6194",
+    "Luau/README.md": "1137f91d377fb94efa40bfd9675ed8f51f0f9f85df4bfb45ebd94fa78cdb05ec",
+    "TypeScript/simoder.d.ts": "bb8af16a3896ac2af00062022116fd50203e7cc38e15d8d404bc39c58113502b",
+    "LICENSE": "e684202b11a19da5683a57db3c3cc61592fa43a2773ac35ef15ef81a62ec7ff9",
+    "Native/abi_v1.h": "8571d414bf6e13f23a30ca0db6ab5a2e64ba54e968e16a03c06ad3caaaed284c",
+    "Native/native.h": "e25b094336e0d3755fec1972611db1a8687cb02c12ae4fa59f1edfebae4d44fc",
+    "Native/schema.json": "e4e0bef7d1af92552b1e0d2447e20608565af2389c035e1a3b0c2365199dff10",
+    "Native/generate.py": "757201b20dd257628aa3d2233ea2668f91cc626e24c69e2705da0f18f455ca3c",
+    "Native/joint-contract.md": "4406d91435b0d49840536b407981568c892030170559981af0ae7996b3021301",
+    "Native/native-boundary.md": "d81086ec85bb9c47c353ec755b3045afb85bd25714c421720fc3426e5f6d8348",
+    "Native/value-contract.md": "5e109cf7e45317e3c9386c2bf8f368235b01d4051643339192ff1ad06518f169",
+    "Native/conformance.md": "a24d3070f92208485eaa2850c45518c395c285a0a6fcb7e22c8beeac1651540c",
+    "Native/identity.json": "93b3ac8f71d18fff27b95626e36af6884fa46eb99c9929491d8be1370900a27e",
+    "Native/README.md": "357ec45dcbd0e1914e0f44af073d77a0c9e42596f70fb22d2ddf0727103e2a5c",
+    "Native/baseline-schema.json": "bca39f09b5322ca4613639ce262e79db1fa6865c38c4a8549e4496cb3422bdeb",
+    "Luau/base.d.luau": "6e85c9c85044cebf41f718ddb1fd6549e8399c1bb48145e59ccba058aa52c114",
+    "Luau/BASE_API.md": "7c88a390385e17413a1229e4f2c6febefa48d0c065d96ac43804b51a6e4cf4fb",
+    "TypeScript/base.d.ts": "4fe3ed4df4c990c9c89b72e0632cf57deb38e5614c82215053e0233fff7f088d"
+  },
+  "native_contract": "00c98e36f669c6c4f16f7ffd9073130ae9798543b3d0759d7c1937f443e6e236",
+  "profiles": {
+    "base-luau-alpha-v1": {
+      "language": "luau",
+      "declaration": "Luau/base.d.luau",
+      "guide": "Luau/BASE_API.md",
+      "availability": "native-bound-host",
+      "compatibility": "alpha"
+    },
+    "base-ts-beta-v1": {
+      "language": "typescript",
+      "declaration": "TypeScript/base.d.ts",
+      "guide": "Luau/BASE_API.md",
+      "availability": "native-bound-host",
+      "compatibility": "beta"
+    }
+  }
+}

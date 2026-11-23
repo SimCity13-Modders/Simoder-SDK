@@ -1,0 +1,27 @@
+{
+  "status": "candidate-not-deployed",
+  "abi_version": 1,
+  "target": "windows-x86",
+  "calling_convention": "__cdecl",
+  "packing": 4,
+  "max_request_bytes": 1048576,
+  "max_pending_requests": 8,
+  "credential_api": {
+    "role": "core-verified opaque credentials and proof; no HTTP/OAuth parser or mod asserted principal",
+    "functions": ["authenticate", "obtain_context", "release_session"],
+    "control_plane": "not exported to native mod; explicitly approved local core-owned provisioning only",
+    "authority_binding": ["owner generation", "runtime epoch", "principal", "agent session", "audience", "client channel proof", "grant generation", "expiry", "operation allowlist"],
+    "wire_profile": "BLOCKED pending qualified provisioning, cryptographic proof and installed client interoperability"
+  },
+  "errors": {"OK": 0, "INVALID": 1, "VERSION": 2, "STALE": 3, "DENIED": 4, "NOT_READY": 5, "BUSY": 6, "CONFLICT": 7, "CANCELLED": 8, "INDETERMINATE": 9, "RESTART_REQUIRED": 10, "BUFFER_SMALL": 11},
+  "owners": {
+    "core": ["native admission", "lifecycle", "opaque handles", "epochs", "grants", "serialized commits", "dispatch", "native drain"],
+    "base": ["authored Luau semantic routing", "state reconciliation", "ordered lifecycle subscriptions"],
+    "mcp": ["fixed existing 28 tools", "HTTP protocol", "authentication adaptation", "copied bounded conversion"],
+    "sdk": ["canonical C declarations after separate acceptance"]
+  },
+  "states": ["cold", "starting", "ready", "stopping", "stopped", "faulted"],
+  "readiness_flags": {"RUNTIME": 1, "MENU": 2, "CITY": 4},
+  "prohibited": ["new game operations", "third-party tool registration", "raw game addresses to scripts", "Core static duplication", "secret grant creation by tools", "production activation"],
+  "limits_status": "Preserved existing 1MiB broker frame and <=8 native pending requests as candidate minimum ceilings; exact per-operation and HTTP budgets require separate qualification. These do not enlarge existing memory/export limits."
+}

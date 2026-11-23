@@ -1,0 +1,17 @@
+[package]
+name = "simoder-sdk-verifier"
+description = "Offline declaration integrity, Beta contract matrix validator, and Simoder-Base implementation conformance verifier for Simoder-SDK"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+hex.workspace = true
+mlua.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
