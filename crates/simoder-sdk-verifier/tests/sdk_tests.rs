@@ -24,6 +24,9 @@ fn sdk_repo_root() -> PathBuf {
 }
 
 fn base_repo_root() -> PathBuf {
+    if let Ok(dir) = std::env::var("SIMODER_BASE_DIR") {
+        return PathBuf::from(dir);
+    }
     sdk_repo_root()
         .parent()
         .expect("workspace parent")

@@ -7,3 +7,5 @@
 /Native/** -text
 /Luau/base.d.luau -text
 /Luau/BASE_API.md -text
+/TypeScript/base.d.ts -text
+/contracts-matrix.json -text
