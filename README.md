@@ -29,6 +29,71 @@ Consumer locks identify the SDK commit and hashes; consumers reject drift rather
 than treating vendored files as separately editable API definitions. Canonical
 payload paths use `-text` Git attributes to preserve exact checkout bytes.
 
+## IDE Setup & Installation
+
+`Simoder-SDK` provides authoritative definitions for **Visual Studio Code**, **Cursor**, **VSCodium**, **Visual Studio**, and other LSP-enabled editors.
+
+### 1. Visual Studio Code / Cursor (TypeScript & JavaScript)
+
+For mods written in JavaScript (QuickJS ES2023) or TypeScript:
+
+1. Copy or submodule `Simoder-SDK` into your mod project (e.g. `vendor/Simoder-SDK`).
+2. Add a `tsconfig.json` or `jsconfig.json` in your mod project root:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "checkJs": true,
+    "strict": true
+  },
+  "include": [
+    "scripts/**/*",
+    "vendor/Simoder-SDK/TypeScript/**/*"
+  ]
+}
+```
+
+This gives you immediate **IntelliSense**, parameter documentation, and type safety for `simoder.*` and `base.*` APIs.
+
+---
+
+### 2. Visual Studio Code / Cursor (Luau)
+
+For mods written in Luau:
+
+1. Install the [**Luau Language Server**](https://marketplace.visualstudio.com/items?itemName=JohnnyMorganz.luau-lsp) extension (`JohnnyMorganz.luau-lsp`).
+2. In your workspace `.vscode/settings.json`, point to the SDK definition files:
+
+```json
+{
+  "luau-lsp.platform.type": "standard",
+  "luau-lsp.types.definitionFiles": [
+    "${workspaceFolder}/vendor/Simoder-SDK/Luau/simoder.d.luau",
+    "${workspaceFolder}/vendor/Simoder-SDK/Luau/base.d.luau"
+  ]
+}
+```
+
+Disable Roblox-specific type checking (`"luau-lsp.platform.type": "standard"`). You will receive full autocomplete and hover documentation for all host and base methods.
+
+---
+
+### 3. Visual Studio / CLion / C++ (Native ABI v2 DLL Mods)
+
+For native C/C++ mods (`.dll` compiled for `i686-pc-windows-msvc` x86):
+
+1. Add `Native/` to your compiler include directories (`/I path/to/Simoder-SDK/Native` or CMake `target_include_directories`).
+2. Include the native headers:
+   ```c
+   #include "native.h"
+   ```
+3. Export the standard ABI v2 lifecycle hooks: `SimoderModule_QueryV2`, `SimoderModule_PrepareV2`, `SimoderModule_AdmitV2`, `SimoderModule_QuiesceV2`, and `SimoderModule_DrainV2`.
+
+---
+
 Configure and verify with the offline Rust verification suite (`crates/simoder-sdk-verifier`):
 
 ```powershell
