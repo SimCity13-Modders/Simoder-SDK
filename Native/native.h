@@ -57,7 +57,11 @@ typedef struct SdSemanticApi {
     /* @summary Release owned invocation without revealing result. @param owner Issuing owner. @param invocation Owned reference. @return BUSY until all retaining tasks/subscriptions are released; OK invalidates every later use as STALE. */
     SdResult (SD_CALL *release_invocation)(SdHandle owner, SdHandle invocation);
 } SdSemanticApi;
-/* @summary Root version2, leaf tables version1; null facets are unavailable, never permission fallback. */
+/* @summary Root version2, leaf tables version1; null facets are unavailable, never permission fallback.
+ * @remarks Extended host semantic table (`SdSemanticHostApiV2`, version 3) appends optional trailing fields
+ * (`eval_ui_js` at v1, `log_message` at v2, `list_mod_tools` + `invoke_mod_tool(name, args, grants, out)` at v3)
+ * gated by `header.size` and `header.version` checks; `SdHostApiV2` size and `SD_CONTRACT_SHA256_HEX` remain unchanged.
+ */
 typedef struct SdHostApiV2 { SdHeader header; SdHandle owner; const SdLifecycleApi *lifecycle; const SdDispatchApi *dispatch; const SdCredentialApi *credentials; const SdSemanticApi *semantic; } SdHostApiV2;
 /* @summary Exact module contract identity; header version2, ABI/base versions checked, reserved must be zero. */
 typedef struct SdModuleDescriptorV2 { SdHeader header; uint32_t host_version; uint32_t base_contract_version; uint32_t reserved0; uint32_t reserved1; uint8_t contract_sha256[32]; } SdModuleDescriptorV2;

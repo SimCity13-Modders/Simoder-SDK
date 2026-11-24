@@ -1,44 +1,45 @@
-# Simoder SDK declarations
+# Simoder-SDK
 
-Version 0.2.0 adds the supported alpha `base-luau-alpha-v1` profile in
-[Luau/base.d.luau](Luau/base.d.luau), with [API guidance](Luau/BASE_API.md).
-The legacy Luau/TypeScript declarations and MIT notice were extracted byte-for-byte from Simoder-DevTools revision
-`d1128dc40336ecd7371d15305411ab73fdae20db`.
+[![Download Latest (Nightly)](https://img.shields.io/github/last-commit/SimCity13-Modders/Simoder-SDK/main?label=Download%20latest%20(nightly)&logo=github)](https://github.com/SimCity13-Modders/Simoder-SDK/archive/refs/heads/main.zip)
+[![Download Latest Release](https://img.shields.io/github/v/release/SimCity13-Modders/Simoder-SDK?label=Download%20latest%20release&logo=github)](https://github.com/SimCity13-Modders/Simoder-SDK/releases/latest)
+[![Star](https://img.shields.io/github/stars/SimCity13-Modders/Simoder-SDK?style=social)](https://github.com/SimCity13-Modders/Simoder-SDK/stargazers)
 
-`Luau/simoder.d.luau` describes the existing Luau host. See
-[editor configuration](Luau/README.md), including opt-in Base definitions
-without changing IDE settings.
-`TypeScript/simoder.d.ts` describes the legacy TypeScriptToLua authoring pipeline.
-These files are declarations, not executable runtime modules or permission grants.
-This package provides no JavaScript engine, compiler, downloader,
-runtime implementation or Base TypeScript/JavaScript support. The narrower TypeScript literal types
-and broader Luau types are preserved from the existing implementation.
+**Simoder-SDK** is the authoritative declaration, header, and contract matrix repository for **Simoder** mod authors. It ships typed definitions for **Luau** (`simoder.d.luau`, `base.d.luau`), **TypeScript / QuickJS ES2023** (`simoder.d.ts`), and **Native C/C++ `ABI v2`** (`Native/native.h`), together with `contracts-matrix.json` and an offline Rust verifier (`simoder-sdk-verifier`).
 
-This repository is the authoritative declaration source. Consumers may retain
-hash-verified vendored/generated copies to preserve existing offline editor and
-compiler layouts; those copies must identify this package version and source
-revision and must not be independently edited. `sdk-manifest.json` records exact
-source hashes and upstream provenance. A local Git revision/hash verifies prepared
-content; it does not authenticate a publisher or grant code execution permission.
+> [!NOTE]
+> `Simoder-SDK` provides API/ABI declarations and IDE type definitions only — it contains no runtime binaries, compilers, or permission grants.
 
-DevTools and Mod-Examples retain pinned, hash-verified vendored compatibility
-copies at their existing source paths. This deliberately preserves offline Node
-compiler adjacency, runtime fingerprints and automatic editor discovery without
-preparing a replacement toolchain or copying external compiler dependencies.
-Consumer locks identify the SDK commit and hashes; consumers reject drift rather
-than treating vendored files as separately editable API definitions. Canonical
-payload paths use `-text` Git attributes to preserve exact checkout bytes.
+## Dependencies & Requirements
 
-## IDE Setup & Installation
+- **Target Runtime**: [Simoder](https://github.com/SimCity13-Modders/Simoder) + [Simoder-Base](https://github.com/SimCity13-Modders/Simoder-Base)
+- **IDE Support (optional)**:
+  - **Luau**: VS Code / Cursor with [`JohnnyMorganz.luau-lsp`](https://marketplace.visualstudio.com/items?itemName=JohnnyMorganz.luau-lsp)
+  - **TypeScript / JS**: VS Code / Cursor / any TS language server
+  - **Native C/C++**: Any `i686-pc-windows-msvc` (32-bit x86) C/C++ toolchain
+- **Verifier Tests (optional)**: Rust toolchain (`edition = "2024"`) for `crates/simoder-sdk-verifier`
 
-`Simoder-SDK` provides authoritative definitions for **Visual Studio Code**, **Cursor**, **VSCodium**, **Visual Studio**, and other LSP-enabled editors.
+## Installation & IDE Setup
 
-### 1. Visual Studio Code / Cursor (TypeScript & JavaScript)
+Download the SDK from the **Release** or **Nightly** badge above (or add it as a Git submodule at `vendor/Simoder-SDK`), then configure your editor:
 
-For mods written in JavaScript (QuickJS ES2023) or TypeScript:
+### 1. Luau (VS Code / Cursor)
 
-1. Copy or submodule `Simoder-SDK` into your mod project (e.g. `vendor/Simoder-SDK`).
-2. Add a `tsconfig.json` or `jsconfig.json` in your mod project root:
+1. Install **Luau Language Server** (`JohnnyMorganz.luau-lsp`).
+2. Add to `.vscode/settings.json`:
+
+```json
+{
+  "luau-lsp.platform.type": "standard",
+  "luau-lsp.types.definitionFiles": [
+    "${workspaceFolder}/vendor/Simoder-SDK/Luau/simoder.d.luau",
+    "${workspaceFolder}/vendor/Simoder-SDK/Luau/base.d.luau"
+  ]
+}
+```
+
+### 2. TypeScript & JavaScript (QuickJS ES2023)
+
+Add a `tsconfig.json` or `jsconfig.json` in your mod project root:
 
 ```json
 {
@@ -56,57 +57,24 @@ For mods written in JavaScript (QuickJS ES2023) or TypeScript:
 }
 ```
 
-This gives you immediate **IntelliSense**, parameter documentation, and type safety for `simoder.*` and `base.*` APIs.
+### 3. Native C/C++ (`ABI v2` x86 DLL Mods)
+
+1. Add `vendor/Simoder-SDK/Native` to your compiler include directories (`/I` or CMake `target_include_directories`).
+2. Include `#include "native.h"` and compile for 32-bit `i686-pc-windows-msvc`.
+3. Export `SimoderModule_QueryV2`, `SimoderModule_PrepareV2`, `SimoderModule_AdmitV2`, `SimoderModule_QuiesceV2`, and `SimoderModule_DrainV2`.
 
 ---
 
-### 2. Visual Studio Code / Cursor (Luau)
+## Contents & Contracts
 
-For mods written in Luau:
+- [Luau/BASE_API.md](Luau/BASE_API.md) & [Luau/README.md](Luau/README.md) — `base-luau-alpha-v1` and host Luau API guides
+- [Native/README.md](Native/README.md) & [Native/native.h](Native/native.h) — Native `ABI v2` host/module structs and lifecycle contract
+- [CONTRACTS.md](CONTRACTS.md) & [`contracts-matrix.json`](contracts-matrix.json) — Canonical cross-runtime capability matrix
+- `sdk-manifest.json` — Exact source hashes and provenance
 
-1. Install the [**Luau Language Server**](https://marketplace.visualstudio.com/items?itemName=JohnnyMorganz.luau-lsp) extension (`JohnnyMorganz.luau-lsp`).
-2. In your workspace `.vscode/settings.json`, point to the SDK definition files:
-
-```json
-{
-  "luau-lsp.platform.type": "standard",
-  "luau-lsp.types.definitionFiles": [
-    "${workspaceFolder}/vendor/Simoder-SDK/Luau/simoder.d.luau",
-    "${workspaceFolder}/vendor/Simoder-SDK/Luau/base.d.luau"
-  ]
-}
-```
-
-Disable Roblox-specific type checking (`"luau-lsp.platform.type": "standard"`). You will receive full autocomplete and hover documentation for all host and base methods.
-
----
-
-### 3. Visual Studio / CLion / C++ (Native ABI v2 DLL Mods)
-
-For native C/C++ mods (`.dll` compiled for `i686-pc-windows-msvc` x86):
-
-1. Add `Native/` to your compiler include directories (`/I path/to/Simoder-SDK/Native` or CMake `target_include_directories`).
-2. Include the native headers:
-   ```c
-   #include "native.h"
-   ```
-3. Export the standard ABI v2 lifecycle hooks: `SimoderModule_QueryV2`, `SimoderModule_PrepareV2`, `SimoderModule_AdmitV2`, `SimoderModule_QuiesceV2`, and `SimoderModule_DrainV2`.
-
----
-
-Configure and verify with the offline Rust verification suite (`crates/simoder-sdk-verifier`):
+## Verification
 
 ```powershell
 cargo clippy --workspace --all-targets --offline -- -D warnings
 cargo test --workspace --offline
 ```
-
-See [CONTRACTS.md](CONTRACTS.md) and [`contracts-matrix.json`](contracts-matrix.json) for the canonical Beta API/ABI matrix across Luau, Base Luau, Native ABI v2, and QuickJS/TypeScript-to-JS.
-
-The package contains Luau/TypeScript and Base Luau declarations/guides,
-the Native declaration bundle and its generation inputs, the Beta contracts matrix, this README, the manifest
-and MIT license. No compiler is installed or fetched.
-Tests verify package closure, pinned byte hashes, contract matrix completeness, and automated conformance against the `Simoder-Base` Luau implementation.
-They do not prove editor UI behavior, gameplay or future language support.
-
-Native ABI v2 declarations and supported/unavailable facets are described in [Native](Native/README.md). Native inputs and generated headers are installed under Native; no binary is installed.
